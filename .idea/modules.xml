@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LeeCoolWhether.iml" filepath="$PROJECT_DIR$/LeeCoolWhether.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leewhether.iml" filepath="$PROJECT_DIR$/leewhether.iml" />
     </modules>
   </component>
 </project>
