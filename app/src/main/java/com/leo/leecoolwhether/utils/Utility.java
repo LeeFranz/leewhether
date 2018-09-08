@@ -2,9 +2,11 @@ package com.leo.leecoolwhether.utils;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.leo.leecoolwhether.domain.City;
 import com.leo.leecoolwhether.domain.County;
 import com.leo.leecoolwhether.domain.Province;
+import com.leo.leecoolwhether.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -68,5 +70,20 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /**
+     * 将返回的JSON数据解析层Weather实体类
+     */
+    public static Weather handleWeatherRespionse(String response) {
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent,Weather.class);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
